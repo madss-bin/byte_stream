@@ -1,5 +1,3 @@
-# M3U8/MP4 Proxy (Rust)
-
 ## Route
 
 ```
