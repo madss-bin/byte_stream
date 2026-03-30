@@ -44,6 +44,15 @@ static DOMAIN_GROUPS: Lazy<Vec<DomainGroup>> = Lazy::new(|| {
             ])),
         },
         DomainGroup {
+            patterns: vec![r"(?i)[a-z]+\d+.(pro|live|xyz|site|online|wiki)$"], // submitted by @flowrt
+            origin: "https://rapid-cloud.co/",
+            referer: "https://rapid-cloud.co/",
+            custom_headers: Some(HashMap::from([
+                ("cache-control", "no-cache"),
+                ("pragma", "no-cache"),
+            ])),
+        },
+        DomainGroup {
             patterns: vec![r"(?i)\.streamtape\.to$"],
             origin: "https://streamtape.to",
             referer: "https://streamtape.to/",
@@ -129,7 +138,7 @@ static DOMAIN_GROUPS: Lazy<Vec<DomainGroup>> = Lazy::new(|| {
             custom_headers: None,
         },
         DomainGroup {
-            patterns: vec![r"(?i)\.streamcdn\.com$"],
+            patterns: vec![r"(?i)\.streamcdn\.com$", r"(?i)\.mediacache\.cc$"],
             origin: "https://anime.uniquestream.net",
             referer: "https://anime.uniquestream.net/",
             custom_headers: None,
